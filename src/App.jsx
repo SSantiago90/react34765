@@ -1,4 +1,6 @@
-import ItemListContainer from "./components/ItemList/ItemListContainer";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import CartWidget from "./components/NavBar/CartWidget";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Componente
 function App() {
@@ -6,8 +8,8 @@ function App() {
 
   return (
     <div style={misEstilos}>
-      <ItemListContainer 
-      greeting="Bienvenidos a nuestra plataforma de cursos" />
+      <CartWidget />
+      <ItemListContainer greeting="Bienvenidos a nuestra plataforma de cursos" />
     </div>
   );
 }
