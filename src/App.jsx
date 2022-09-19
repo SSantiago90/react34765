@@ -1,14 +1,11 @@
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import CartWidget from "./components/NavBar/CartWidget";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import "./app.css";
 // Componente
 function App() {
   let misEstilos = { backgroundColor: "lightblue" };
 
   return (
-    <div style={misEstilos}>
-      <CartWidget />
+    <div className="main" style={misEstilos}>
       <ItemListContainer greeting="Bienvenidos a nuestra plataforma de cursos" />
     </div>
   );
