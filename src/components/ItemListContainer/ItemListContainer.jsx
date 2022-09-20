@@ -12,7 +12,8 @@ function ItemListContainer(props) {
           img="https://www.seoptimer.com/es/blog/wp-content/uploads/2020/06/uiux.png"
           title="UX/UI"
           detail="Aprende Diseño UX/UI desde cero!"
-          price="65"
+          price={65}
+          expired={true}
         />
         <Card
           img="https://soyhorizonte.com/wp-content/uploads/2020/10/Javascript-by-SoyHorizonte.jpg"
@@ -25,6 +26,7 @@ function ItemListContainer(props) {
           title="React"
           detail="Aprende React desde cero!"
           price="75"
+          offer={true}
         />
         <Card
           img="https://www.atsistemas.com/dam/jcr:20b575da-1767-43dc-b18f-4f2a9f722877/1375-775-tailwind-css.png"

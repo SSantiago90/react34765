@@ -9,8 +9,9 @@
   height: 100%;
   object-fit: cover;
 }
+
 .card{
-  margin: 10px 15px;
+  /* margin: 10px 15px;
   min-height: 420px;
   width: 280px;
   height: 100%;
@@ -19,7 +20,7 @@
   background-color: #fff;
   overflow: hidden;  
   transition: all 0.20s ease-in;
-  cursor: pointer;
+  cursor: pointer; */
 }
 
 .card:hover{
