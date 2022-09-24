@@ -1,18 +1,16 @@
 .card-img{
-  width: 320px;
-  height: 160px;
+  width: 280px;
+  height: 260px;
   object-fit: cover;
 }
-
 .card-img img{
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
-
 .card{
-  /* margin: 10px 15px;
-  min-height: 420px;
+  margin: 10px 15px;
+  min-height: 600px;
   width: 280px;
   height: 100%;
   border-radius: 4px;
@@ -20,7 +18,7 @@
   background-color: #fff;
   overflow: hidden;  
   transition: all 0.20s ease-in;
-  cursor: pointer; */
+  cursor: pointer;
 }
 
 .card:hover{

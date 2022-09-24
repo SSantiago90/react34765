@@ -1,8 +1,11 @@
+import { useState } from "react";
 import Button from "../Button/Button";
+import ItemCount from "../ItemCount/ItemCount";
+
 import "./card.css";
 
 export default function Card(props) {
-  // estilos
+  const [expired, setExpired] = useState(props.expired);
 
   const cardStyles = {
     margin: "10px 15px",
@@ -10,8 +13,8 @@ export default function Card(props) {
     width: "280px",
     height: "100%",
     borderRadius: "4px",
-    "box-shadow": "0px 0px 4px rgba(0,0,0,0.50)",
-    "background-color": props.expired ? "#555" : "#fff",
+    boxShadow: "0px 0px 4px rgba(0,0,0,0.50)",
+    backgroundColor: expired ? "#555" : "#fff",
     overflow: "hidden",
     transition: "all 0.20s ease-in",
     cursor: "pointer",
@@ -21,10 +24,18 @@ export default function Card(props) {
     color: props.offer === true ? "green" : "black",
   };
 
+  const imgStyle = {
+    filter: expired ? "grayscale(100%) blur(1px)" : "none",
+  };
+
+  function handleCardClick() {
+    setExpired(!expired);
+  }
+
   return (
-    <div style={cardStyles}>
+    <div onClick={handleCardClick} className="card" style={cardStyles}>
       <div className="card-img">
-        <img src={props.img} alt={props.title}></img>
+        <img style={imgStyle} src={props.img} alt={props.title}></img>
       </div>
       <div className="card-detail">
         <h2>{props.title}</h2>
@@ -34,7 +45,9 @@ export default function Card(props) {
         </h4>
       </div>
 
-      <Button>{`Apredende ${props.title}`}</Button>
+      <Button color={props.color}>{`Apredende ${props.title}`}</Button>
+
+      <ItemCount text={"Agregar al Carrito"} initial={1} stock={props.stock} />
     </div>
   );
 }
