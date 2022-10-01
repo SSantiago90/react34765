@@ -1,23 +1,18 @@
 import React from "react";
 import "./navbar.css";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
+// 4. Todas las etiquetas <a> las reemplazamos por <Link> o <NavLink>
 function NavBar() {
   return (
     <div className="nav-bar">
       <ul className="nav-menu">
-        <a href="/">
-          <li>Inicio</li>
-        </a>
-        <li>
-          <a href="/category/B">Categoría B</a>
-        </li>
-        <li>
-          <a href="/category/B">Categoría C</a>
-        </li>
-        <li>
-          <CartWidget />
-        </li>
+        <Link to="/">Inicio </Link>
+        <Link to="/curso">Curso</Link>
+        <Link to="/category/programacion">Programación💻</Link>
+        <Link to="/category/diseño">Diseño🖌</Link>
+        <CartWidget />
       </ul>
     </div>
   );

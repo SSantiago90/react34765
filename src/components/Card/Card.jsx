@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "../Button/Button";
 import ItemCount from "../ItemCount/ItemCount";
-
+import { Link } from "react-router-dom";
 import "./card.css";
 
 export default function Card(props) {
@@ -44,10 +44,9 @@ export default function Card(props) {
           {props.offer ? <p>Oferta!</p> : <></>}$ {props.price}
         </h4>
       </div>
-
-      <Button color={props.color}>{`Apredende ${props.title}`}</Button>
-
-      <ItemCount text={"Agregar al Carrito"} initial={1} stock={props.stock} />
+      <Link to={`/curso/${props.id}`}>
+        <Button color={props.color}>{`Apredende ${props.title}`}</Button>
+      </Link>
     </div>
   );
 }

@@ -10,6 +10,7 @@ function ItemList(props) {
           return (
             <Card
               key={curso.id}
+              id={curso.id}
               title={curso.title}
               img={curso.img}
               price={curso.price}
