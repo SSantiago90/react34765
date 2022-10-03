@@ -3,16 +3,16 @@ import FlexWrapper from "../FlexWrapper/FlexWrapper";
 import ItemCount from "../ItemCount/ItemCount";
 import "./itemdetail.css";
 
-function CardDetail(props) {
+function CardDetail({ curso }) {
   return (
     <div className="detail-container">
       <FlexWrapper>
         <div className="main container">
-          <h1>{props.title}</h1>
-          <img src={props.img} alt={props.title} />
-          <h3>$ {props.price}</h3>
+          <h1>{curso.title}</h1>
+          <img src={curso.img} alt={curso.title} />
+          <h3>$ {curso.price}</h3>
         </div>
-        <ItemCount stock={props.stock} initial={1} text="Agregar al carrito" />
+        <ItemCount stock={curso.stock} initial={1} text="Agregar al carrito" />
       </FlexWrapper>
     </div>
   );

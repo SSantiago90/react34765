@@ -20,14 +20,7 @@ function ItemDetailContainer(props) {
 
   return (
     <FlexWrapper>
-      <CardDetail
-        title={curso.title}
-        img={curso.img}
-        price={curso.price}
-        detail={curso.detail}
-        stock={curso.stock}
-        expired={curso.expires}
-      />
+      <CardDetail curso={curso} />
     </FlexWrapper>
   );
 }

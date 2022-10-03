@@ -23,6 +23,7 @@ function App() {
             path="/curso/:itemID"
             element={<ItemDetailContainer />}
           ></Route>
+
           <Route path="*" element={<h4>Te perdiste! Error: 404</h4>} />
         </Routes>
       </BrowserRouter>
