@@ -26,7 +26,6 @@ function ItemListContainer(props) {
     <div className="container">
       <h1>Titulo</h1>
       <ItemList coursesList={coursesList} />
-      <hr />
     </div>
   );
 }

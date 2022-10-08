@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import Button from "../Button/Button";
 import FlexWrapper from "../FlexWrapper/FlexWrapper";
+import "./itemcount.css";
 
-export default function ItemCount({ stock, initial, text }) {
+export default function ItemCount({ stock, initial, text, onAddToCart }) {
   const [count, setCount] = useState(initial);
 
   function handleSubstract() {
@@ -13,14 +15,32 @@ export default function ItemCount({ stock, initial, text }) {
   }
 
   return (
-    <div>
-      <h2>Realiza tu compra</h2>
+    <div className="itemcount_container">
       <FlexWrapper>
-        <button onClick={handleSubstract}>-</button>
-        <strong>{count}</strong>
-        <button onClick={handleAdd}>+</button>
+        <div>
+          <h2>Realiza tu compra</h2>
+          <div className="itemcount_control">
+            <Button color="#fc6622" onClick={handleSubstract}>
+              -
+            </Button>
+
+            <strong>{count}</strong>
+            <Button color="#00cc22" onClick={handleAdd}>
+              +
+            </Button>
+          </div>
+        </div>
+
+        <div className="itemcount_btns">
+          <button
+            onClick={() => {
+              onAddToCart(count);
+            }}
+          >
+            {text}
+          </button>
+        </div>
       </FlexWrapper>
-      <button>{text}</button>
     </div>
   );
 }

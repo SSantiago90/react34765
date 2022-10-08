@@ -1,12 +1,20 @@
-.flex{
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 15px 20px;
-  align-items: center;
-  flex-wrap: wrap;
-  align-items: center;
+
+.flexWrapper{
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 980px;
+  border-radius: 5px;
+  margin: 5px auto;
+  padding: 30px 12px;
+  box-shadow: 0px 0px 5px #aaaaaa ;
+}
+
+.fxRow{
+  flex-direction: row;
+}
+
+.fxCol{
+  flex-direction: column;
 }

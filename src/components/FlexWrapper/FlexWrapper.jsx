@@ -2,7 +2,8 @@ import React from "react";
 import "./flexwrapper.css";
 
 function FlexWrapper(props) {
-  return <div className="flex">{props.children}</div>;
+  let classnames = `flexWrapper ${props.columns ? "fxRow" : "fxCol"}`;
+  return <div className={classnames}>{props.children}</div>;
 }
 
 export default FlexWrapper;

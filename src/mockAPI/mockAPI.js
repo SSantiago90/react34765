@@ -22,7 +22,7 @@ const data = [
   {
     id: 3,
     title: "React",
-    img: "https://soyhorizonte.com/wp-content/uploads/2020/10/Javascript-by-SoyHorizonte.jpg",
+    img: "https://blog.facialix.com/wp-content/uploads/2021/11/reactjs.jpg",
     price: 59,
     expired: true,
     detail: "Aprende React desde cero!",
@@ -52,9 +52,9 @@ const data = [
   {
     id: 6,
     title: "React",
-    img: "https://soyhorizonte.com/wp-content/uploads/2020/10/Javascript-by-SoyHorizonte.jpg",
+    img: "https://blog.facialix.com/wp-content/uploads/2021/11/reactjs.jpg",
     price: 59,
-    expired: true,
+    expired: false,
     detail: "Aprende React desde cero!",
     stock: 7,
     category: "programacion",

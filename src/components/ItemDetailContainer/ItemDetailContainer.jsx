@@ -4,7 +4,6 @@ import { getUnCurso } from "../../mockAPI/mockAPI";
 import FlexWrapper from "../FlexWrapper/FlexWrapper";
 import CardDetail from "./CardDetail";
 
-// 6. Leer los parámetros de la URL
 import { useParams } from "react-router-dom";
 
 function ItemDetailContainer(props) {

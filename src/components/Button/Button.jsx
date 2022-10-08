@@ -1,24 +1,14 @@
 import "./button.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function Button(props) {
   const [colorBtn, setColorBtn] = useState({
     backgroundColor: props.color,
   });
 
-  console.log("%cRender del componente", "color: green");
-
-  useEffect(() => {
-    console.log("Montaje del componente");
-  }, []);
-
-  useEffect(() => {
-    console.log("%cRender/update del estado", "color:pink");
-  }, [colorBtn]);
-
   function handleClick() {
-    setColorBtn({ backgroundColor: "rgb(255, 50, 50)" });
-    // 🛑 colorBtn = { backgroundColor: "rgb(157, 150, 00)"}
+    if (props.onClick) props.onClick();
+    //setColorBtn({ backgroundColor: "rgb(255, 50, 50)" });
   }
 
   return (
@@ -26,8 +16,4 @@ export default function Button(props) {
       {props.children}
     </button>
   );
-}
-
-export function ButtonB() {
-  return <button>Click</button>;
 }

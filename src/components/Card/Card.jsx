@@ -1,6 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Button from "../Button/Button";
-import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import "./card.css";
 
