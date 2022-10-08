@@ -3,13 +3,16 @@ import FlexWrapper from "../FlexWrapper/FlexWrapper";
 import ItemCount from "../ItemCount/ItemCount";
 import "./itemdetail.css";
 
+import { useContext } from "react";
+import { cartContext } from "../../context/cartContext";
+
 function CardDetail({ curso }) {
   const [count, setCount] = useState(0);
-
+  const { addToCart, removeItem } = useContext(cartContext);
   //1. Crear una función de "compra"
   //2. Debe guardar el valor de la cantidad en un estado
   function handleAddToCart(count) {
-    console.log("Agregaste items al carrito:", curso, count);
+    addToCart(curso, count);
     setCount(count);
   }
 
@@ -29,14 +32,15 @@ function CardDetail({ curso }) {
         {count === 0 ? (
           <ItemCount
             onAddToCart={handleAddToCart}
+            text="Agregar al carrito"
             stock={curso.stock}
             initial={1}
-            text="Agregar al carrito"
           />
         ) : (
           <a href="/cart">Ver el carrito</a>
         )}
         {/* 3. Pasar la función como evento al Item COunt */}
+        <button onClick={()=> removeItem(curso.id)}>Eliminar</button>
       </FlexWrapper>
     </div>
   );
