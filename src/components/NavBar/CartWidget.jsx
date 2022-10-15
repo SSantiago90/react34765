@@ -4,10 +4,12 @@ import { cartContext } from "../../context/cartContext";
 function CartWidget() {
   const { getTotalItemCount } = useContext(cartContext);
 
+  // 3. Operador AND &&
+
   return (
     <a href="/cart">
-      <span> X </span>
-      <span>{getTotalItemCount()}</span>
+      <span> 🛒 </span>
+      <span>{getTotalItemCount() > 0 && getTotalItemCount()}</span>
     </a>
   );
 }

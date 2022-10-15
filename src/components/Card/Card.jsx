@@ -40,7 +40,7 @@ export default function Card(props) {
         <h2>{props.title}</h2>
         <p>{props.detail}</p>
         <h4 style={priceStyle}>
-          {props.offer ? <p>Oferta!</p> : <></>}$ {props.price}
+          {props.offer && <p>Oferta!</p>}$ {props.price}
         </h4>
       </div>
       <Link to={`/curso/${props.id}`}>

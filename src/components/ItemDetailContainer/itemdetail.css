@@ -1,16 +1,16 @@
 .cardDetail_img{
-  max-width: 780px;
-  height: 260px;
+  height: 310px;
   object-fit: cover;
 }
 
 .cardDetail_img img{
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
+
 .cardDetail{
-  margin: 10px 15px;
+  margin: 40px auto;
   min-height: 600px;
   width: 90%;
   min-width: 580px;

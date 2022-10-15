@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CartContextProvider } from "./context/cartContext";
 
 import "./app.css";
+import CartView from "./components/CartView/CartView";
 
 function App() {
   let misEstilos = { backgroundColor: "lightblue" };
@@ -27,7 +28,7 @@ function App() {
             ></Route>
              <Route
               path="/cart"
-              element={<h1>Cart</h1>}
+              element={<CartView/>}
             ></Route>
             <Route path="*" element={<h4>Te perdiste! Error: 404</h4>} />
           </Routes>

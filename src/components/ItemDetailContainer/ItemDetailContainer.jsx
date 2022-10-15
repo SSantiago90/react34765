@@ -7,19 +7,28 @@ import CardDetail from "./CardDetail";
 import { useParams } from "react-router-dom";
 
 function ItemDetailContainer(props) {
-  const [curso, setCurso] = useState([]);
-
+  const [curso, setCurso] = useState({});
+  const [feedbackMsg, setFeedbackMsg] = useState(null);
   const { itemID } = useParams();
 
   useEffect(() => {
-    getUnCurso(itemID).then((data) => {
-      setCurso(data);
-    });
+    getUnCurso(itemID)
+      .then((data) => {
+        setCurso(data);
+      })
+      .catch((error) => {
+        setFeedbackMsg(error.message);
+      });
   }, [itemID]);
 
+  // 2. Render condicional con Operador Ternario
   return (
     <FlexWrapper>
-      <CardDetail curso={curso} />
+      {feedbackMsg !== null ? (
+        <h4>Error: {feedbackMsg}</h4>
+      ) : (
+        <CardDetail curso={curso} />
+      )}
     </FlexWrapper>
   );
 }

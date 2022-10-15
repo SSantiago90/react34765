@@ -8,6 +8,7 @@ const data = [
     detail: "Aprende Diseño UX/UI desde cero!",
     stock: 10,
     category: "diseño",
+    offer: true,
   },
   {
     id: 2,
@@ -63,16 +64,22 @@ const data = [
 
 export function getCursos() {
   return new Promise((resolve) => {
-    setTimeout(() => resolve(data), 1000);
+    setTimeout(() => resolve(data), 2000);
   });
 }
 
 export function getUnCurso(idParams) {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     let cursoReq = data.find((item) => {
       return item.id === Number(idParams);
     });
-    setTimeout(() => resolve(cursoReq), 1000);
+    setTimeout(() => {
+      if (cursoReq === undefined)
+        reject(new Error("No se pudo encontrar el curso."));
+      else {
+        resolve(cursoReq);
+      }
+    }, 2000);
   });
 }
 
@@ -81,6 +88,6 @@ export function getCursosByCategory(idCategoryParams) {
     let arrayFilterCourses = data.filter(
       (item) => item.category === idCategoryParams
     );
-    setTimeout(() => resolve(arrayFilterCourses), 1000);
+    setTimeout(() => resolve(arrayFilterCourses), 2000);
   });
 }

@@ -1,6 +1,7 @@
 
 .flexWrapper{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   width: 100%;
@@ -11,10 +12,10 @@
   box-shadow: 0px 0px 5px #aaaaaa ;
 }
 
-.fxRow{
+.flex_rows{
   flex-direction: row;
 }
 
-.fxCol{
+.flex_cols{
   flex-direction: column;
 }
