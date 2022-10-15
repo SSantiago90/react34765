@@ -9,7 +9,6 @@ import CartView from "./components/CartView/CartView";
 
 function App() {
   let misEstilos = { backgroundColor: "lightblue" };
-
   return (
     <div className="main" style={misEstilos}>
       <CartContextProvider>

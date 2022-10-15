@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./itemlistcontainer.css";
 
-import { getCursos, getCursosByCategory } from "../../mockAPI/mockAPI";
+import { getCursos, getCursosByCategory } from "../../services/firebase";
+
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
@@ -9,7 +10,7 @@ import Loader from "../Loader/Loader";
 function ItemListContainer(props) {
   const [coursesList, setCoursesList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  
+
   const params = useParams();
   const categoryID = params.categoryID;
 
@@ -31,12 +32,7 @@ function ItemListContainer(props) {
   return (
     <div className="container">
       <h1>Titulo</h1>
-      { isLoading ?
-         <Loader/>
-         :
-         <ItemList coursesList={coursesList} />
-      }
-     
+      {isLoading ? <Loader /> : <ItemList coursesList={coursesList} />}
     </div>
   );
 }

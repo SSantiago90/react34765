@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { getUnCurso } from "../../mockAPI/mockAPI";
+import { getUnCurso } from "../../services/firebase";
 import FlexWrapper from "../FlexWrapper/FlexWrapper";
 import CardDetail from "./CardDetail";
 
@@ -11,12 +11,14 @@ function ItemDetailContainer(props) {
   const [feedbackMsg, setFeedbackMsg] = useState(null);
   const { itemID } = useParams();
 
+  console.log("Item id", itemID );
   useEffect(() => {
     getUnCurso(itemID)
       .then((data) => {
         setCurso(data);
       })
       .catch((error) => {
+        console.log("Catch?")
         setFeedbackMsg(error.message);
       });
   }, [itemID]);
