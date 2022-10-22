@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createBuyOrder } from "../../services/firebase";
 import { useNavigate } from "react-router-dom";
 
-import "sweetalert2/src/sweetalert2.scss";
+/* import "sweetalert2/src/sweetalert2.scss"; */
 import Swal from "sweetalert2/dist/sweetalert2.js";
 
 import InputForm from "./InputForm";
@@ -26,7 +26,7 @@ export default function UserForm({ cart, getTotalPrice }) {
   }
 
   function onSubmit(evt) {
-    evt.preventDefault();   
+    evt.preventDefault();
 
     const orderData = {
       buyerData: userData,
