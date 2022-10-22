@@ -9,6 +9,7 @@ import CartView from "./components/CartView/CartView";
 
 function App() {
   let misEstilos = { backgroundColor: "lightblue" };
+
   return (
     <div className="main" style={misEstilos}>
       <CartContextProvider>
@@ -25,10 +26,14 @@ function App() {
               path="/curso/:itemID"
               element={<ItemDetailContainer />}
             ></Route>
-             <Route
-              path="/cart"
-              element={<CartView/>}
+
+            <Route path="/cart" element={<CartView />}></Route>
+
+            <Route
+              path="/thankyou/:orderid"
+              element={<h1>Gracias por tu compra</h1>}
             ></Route>
+
             <Route path="*" element={<h4>Te perdiste! Error: 404</h4>} />
           </Routes>
         </BrowserRouter>
